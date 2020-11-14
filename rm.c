@@ -14,7 +14,6 @@ void function(char * flag, char * input) {
 	int i_flag = strcmp(flag, "-i");
 	int help_flag = strcmp(input, "--help");
 
-	int a;
 	if (help_flag == 0) {
 		int fd, sz;
 		char *c = (char  *) calloc(10000, sizeof(char));
@@ -24,15 +23,16 @@ void function(char * flag, char * input) {
 	 	printf("%s\n", c );
 	 	return;
 	}
-
+	
+	int valid;
 	if (no_flag == 0) {
-		a = remove(input);
-		if (a != 0){
+		valid = remove(input);
+		if (valid != 0){
 			printf("rm: cannot remove '%s': No such file or directory\n", input);
 		}
 	}
 	else if(force_flag == 0) {
-		a = remove(input);
+		valid = remove(input);
 	}
 	else if (i_flag == 0) {
 		printf("rm: cannot remove '%s': No such file or directory\n", input);
@@ -41,7 +41,7 @@ void function(char * flag, char * input) {
 		char y[100];
 		scanf("%[^\n]%*c", y);
 		if (strcmp(y, "y") == 0) {
-			a = remove(input);
+			valid = remove(input);
 		}
 	}
 }

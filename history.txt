@@ -1,0 +1,13 @@
+1 echo hari
+2 echo -2
+3 echo -n hari
+4 echo -1 hf
+5 echo f
+6 echo afdhka
+7 echo ajdf
+8 echo ah dh afd
+9 ls .
+10 cd test_folder
+11 mkdir folder
+12 cd folder
+13 cd /home/hari/Projects/Linux-shell/folder
